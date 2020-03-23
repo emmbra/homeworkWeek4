@@ -1,3 +1,5 @@
+// declare all variables
+
 var questions = [
     {
         question: "Who invented the JavaScript programming language?",
@@ -30,3 +32,6 @@ var questions = [
     },
 
 ];
+
+// declare all functions
+

@@ -1,3 +1,7 @@
 #timeDiv {
     display: none;
 }
+
+header {
+    background-color: blueviolet;
+}

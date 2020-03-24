@@ -103,7 +103,7 @@ submitButton.addEventListener("click", function(event) {
   window.location.href = "./highscores.html";
 });
 
-// scoring
+// scoring for answer choices
 answerChoices.addEventListener("click", function(event) {
   var feedback = document.getElementsByClassName("answerFeedback")[0];
   if (answer === event.target.textContent) {

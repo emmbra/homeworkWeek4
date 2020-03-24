@@ -16,7 +16,7 @@ var secsRemaining = 100;
 var playerName;
 var answer;
 
-// set this to -1 because arrays start at index 0
+// set this to -1 because array starts at index 0
 var questionNumber = -1;
 
 ////////////////////////
@@ -46,16 +46,20 @@ function setTimer() {
 // displays quiz questions
 function quizQuestions() {
   questionNumber++;
-  answer = questions[questionNumber].answer;
-  questionContainer.textContent = questions[questionNumber].title;
-  answerChoices.innerHTML = "";
-  var choices = questions[questionNumber].choices;
-  for (var i = 0; i < choices.length; i++) {
-    var nextChoice = document.createElement("button");
-    nextChoice.textContent = choices[i];
-    answerButton = answerChoices
-      .appendChild(nextChoice)
-      .setAttribute("class", "p-5 m-1 btn btn-secondary btn-block");
+  if(questions[questionNumber]) {
+    answer = questions[questionNumber].answer;
+    questionContainer.textContent = questions[questionNumber].title;
+    answerChoices.innerHTML = "";
+    var choices = questions[questionNumber].choices;
+    for (var i = 0; i < choices.length; i++) {
+      var nextChoice = document.createElement("button");
+      nextChoice.textContent = choices[i];
+      answerButton = answerChoices
+        .appendChild(nextChoice)
+        .setAttribute("class", "p-5 m-1 btn btn-secondary btn-block");
+    }
+  } else {
+    return;
   }
 }
 
@@ -73,7 +77,7 @@ function addScore() {
     name: playerName,
     score: secsRemaining
   };
-  var highScores = JSON.parse(localStorage.getItem("highScores") || "[]");
+  var highScores = JSON.parse(localStorage.getItem("highScores") || "[]"); // short-circuiting refers to the or statement here
   highScores.push(newScore);
   localStorage.setItem("highScores", JSON.stringify(highScores));
 }

@@ -1,12 +1,12 @@
 // establish variables
 
-var restartQuizButton = document.querySelector("button.restartQuizButton");
-var clearScoresButton = document.querySelector("button.clearScoresButton");
+var restartQuizButton = document.querySelector(".restartQuizButton");
+var clearScoresButton = document.querySelector(".clearScoresButton");
 var highScores = JSON.parse(localStorage.getItem("highScores") || "[]");
 var highScoreList = document.getElementById("highScoreList");
 
 // sort the high scores from high to low
-highScores.sort(function (a, b) {
+highScores.sort(function(a, b) {
     return b.score - a.score;
 })
 
@@ -18,12 +18,12 @@ for (var i = 0; i < highScores.length; i++) {
     highScoreList.appendChild(newScore);
 }
 
-// click event listener for restart quiz 
+// click event listener for restart quiz button
 restartQuizButton.addEventListener("click", function () {
     history.back();
 });
 
-// click event listener for clearing scores
+// click event listener for clearing scores button
 clearScoresButton.addEventListener("click", function () {
     localStorage.clear();
     alert("All scores have been cleared!");

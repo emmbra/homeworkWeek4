@@ -9,28 +9,56 @@
 </head>
 <body>
 
-<header>
-    <!-- High Scores - link to high scores top left
-    Timer - timer displayed top right -->
-</header>
+    <header class="p-2" style="background-color: rgb(16, 146, 16)">
+        <strong><a href="highscores.html">HIGH SCORES</a></strong>
+        <span id="timer" class="float-right mr-2">Time Remaining: 0</span>
+    </header>
 
-<div class = "container" id = "instructions">
-    <p> Instructions: </p>
-</div>
+    <!-- Quiz Start Page -->
+    <div class="container mt-5" id="startPage">
+        <div class="row justify-content-center mt-5 pt-3 pb-3">
+            <div class="col-10 col-lg-8 text-center">
+                <h1>JavaScript Quiz!</h1><br>
+                <h5><p>Try to answer these questions about JavaScript. <br></h5>
+                    <b><i>NOTE:</i></b> <br>
+                    You start with 100 seconds.<br>
+                    Incorrect answers will deduct 20 seconds.<br>
+                    Final score is equal to number of seconds remaining.</p> <br>
+                <button type="button" id="startButton" class="btn btn-info btn-lg">START QUIZ</button>
+            </div>
+        </div>
+    </div>
 
-<div class = "container" id = "message">
-   <p id = "timeDiv">Time Remaining: <span id ="timer"></span></p> 
-</div>
+    <!-- Quiz questions appear after clicking START QUIZ button. -->
+    <div class="container mt-5 d-none" id="quiz">
+        <div class="row justify-content-center mt-5 pt-3 pb-3">
+            <div class="col-10 col-lg-8" id="QA-block">
+                <h3 id="questions" class="mb-4">QUESTION</h3>
+                <ul id="answers" class="list-unstyled">
+                    <li class="answerChoice">A) </li>
+                    <li class="answerChoice">B) </li>
+                    <li class="answerChoice">C) </li>
+                    <li class="answerChoice">D) </li>
+                </ul>
+                <p class="feedback"></p>
+            </div>
+        </div>
+    </div>
 
-<div class = "container" id = "quiz">
-
-</div>
-
-<div class = "container">
-    <button id = "startButton">Start</button>
-</div>
-
-<div class = "container" id = "highScores"></div>
+    <!-- Final Score Screen -->
+    <div class="container mt-5 d-none" id="submitHighScore">
+        <div class="row justify-content-center mt-5 pt-3 pb-3">
+            <div class="col-10 col-lg-8">
+                <h2>Finished!</h2>
+                <p id="finalScore"> </p>
+                <form class="form-group">
+                    <label for="new-score">Enter your name: </label>
+                    <input type="text" id="playerName">
+                    <button type="button" class="btn btn-info btn-sm submitButton">Submit Score</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     
     <script src="./script.js"></script>

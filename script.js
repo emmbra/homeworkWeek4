@@ -1,37 +1,44 @@
 // declare all variables
+const questions = require("./questions")
 
-var questions = [
-    {
-        question: "Who invented the JavaScript programming language?",
-        choices: ["Bill Gates", "Bill Nye", "Steve Jobs", "Brendan Eich"],
-        answer: "Brendan Eich"
-    },
+var startButton = document.querySelector("#startButton");
+var timeDiv = document.querySelector("#timeDiv");
+var countDown = 100;
 
-    {
-        question: "Which company was the inventor of JavaScript working for at the time of its creation?",
-        choices: ["Microsoft", "Apple", "Netscape", "Amazon"],
-        answer: "Netscape"
-    },
+// references questions.js file
 
-    {
-        question: "Most webpages are made using HTML, CSS, and ________:",
-        choices: ["Ruby", "Python", "JavaScript", "Spanish"],
-        answer: "JavaScript"
-    },
 
-    {
-        question: "Which HTML tag enables JavaScript?",
-        choices: ["<java>", "<script>", "<javascript>", "<main>"],
-        answer: "<script>"
-    },
 
-    {
-        question: "What does DOM stand for?",
-        choices: ["Directional Orientation Method", "Document Object Model", "Drive Over Method", "Data Obfuscation Model"],
-        answer: "Document Object Model"
-    },
 
-];
 
 // declare all functions
 
+function timerStart() {
+    var timerInterval = setInterval(function() {
+        countDown--; 
+        if(countDown === 0) { // || no more questions to ask
+          clearInterval(timerInterval); // clearInterval tells it when to stop
+        } // come back here to add game ending conditions
+    
+      }, 1000); // 1000 is milliseconds by default
+}
+
+    // timer interval
+    // if statement for game ending condition and then clear interval
+function timerSet()
+function quizStart() {
+    timeDiv.style.display = "inline";
+    timerStart();
+}
+function answerFeedback()
+
+
+// Start Button - set onclick function
+
+startButton.addEventListener("click", quizStart)
+
+// Submit High Score Button - set onclick function
+
+// Retrieve high scores from local storage
+
+// Save high scores to local storage

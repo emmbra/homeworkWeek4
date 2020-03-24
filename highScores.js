@@ -1,27 +1,28 @@
-var restartButton = document.querySelector("button.restartButton");
-var clearScoresButotn = document.querySelector("button.clearButton"),
-
-var highScores = JSON.parse(localStorage.getItem("highScores") || "[]"),
+var restartQuizButton = document.querySelector("button.restartQuizButton");
+var clearScoresButton = document.querySelector("button.clearScoresButton");
+var highScores = JSON.parse(localStorage.getItem("highScores") || "[]");
 var highScoreList = document.getElementById("highScoreList");
 
-// sort high scores numerically from largest to smallest
+// sort the high scores from high to low
 highScores.sort(function (a, b) {
     return b.score - a.score
 })
 
-// display the scores
-for (var j = 0; j < highScores.length; j++) {
-    var newLi = document.createElement("li")
-    newLi.textContent = highScores[s].name + " - " + highScores[j].score
-    scoreList.appendChild(newLi)
+// display the high scores in ordered list format
+for (var i = 0; i < highScores.length; i++) {
+    var newLi = document.createElement("li");
+    newLi.textContent = highScores[i].name + ": " + highScores[i].score + " points";
+    highScoreList.appendChild(newLi);
 }
 
-
-// click handlers for restart and clearing scoreboard
-clearButton.addEventListener("click", function () {
-    localStorage.clear();
-    history.back()
+// click even listeners for restart quiz 
+restartQuizButton.addEventListener("click", function () {
+    history.back();
 });
-restartButton.addEventListener("click", function () {
+
+// click event listener for clearing scores
+clearScoresButton.addEventListener("click", function () {
+    localStorage.clear();
+    alert("All scores have been cleared!");
     history.back();
 });

@@ -62,7 +62,7 @@ function quizQuestions() {
 function displayScore() {
   document.getElementById("quiz").classList.add("d-none");
   document.getElementById("submitHighScore").classList.remove("d-none");
-  finalScore.textContent = "FINAL SCORE: " + secsRemaining + ".";
+  finalScore.textContent = "FINAL SCORE: " + secsRemaining + " points.";
 }
 
 // save scores to local storage

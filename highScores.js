@@ -5,10 +5,10 @@ var highScoreList = document.getElementById("highScoreList");
 
 // sort the high scores from high to low
 highScores.sort(function (a, b) {
-    return b.score - a.score
+    return b.score - a.score;
 })
 
-// try to retrieve high scores from local storage or a blank array
+// try to retrieve high scores from local storage or a blank array if no high scores stored
 // display the high scores in ordered list format
 for (var i = 0; i < highScores.length; i++) {
     var newScore = document.createElement("li");
@@ -16,7 +16,7 @@ for (var i = 0; i < highScores.length; i++) {
     highScoreList.appendChild(newScore);
 }
 
-// click even listeners for restart quiz 
+// click event listener for restart quiz 
 restartQuizButton.addEventListener("click", function () {
     history.back();
 });

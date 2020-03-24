@@ -108,12 +108,12 @@ answerChoices.addEventListener("click", function(event) {
   var feedback = document.getElementsByClassName("answerFeedback")[0];
   if (answer === event.target.textContent) {
     feedback.innerHTML = "Correct! +20 seconds.";
-    setTimeout(hideFeedback, 1225);
+    setTimeout(hideFeedback, 1000);
     secsRemaining = secsRemaining + 20;
     showFeedback();
   } else {
     feedback.innerHTML = "Incorrect! -20 seconds.";
-    setTimeout(hideFeedback, 1225);
+    setTimeout(hideFeedback, 1000);
     secsRemaining = secsRemaining - 20;
     showFeedback();
   }

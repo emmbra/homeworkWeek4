@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel = "text/stylesheet" href = "./style.css">
-    <title>Document</title>
+    <title>JavaScript Coding Quiz</title>
 </head>
 <body>
 
@@ -17,7 +17,7 @@
     <!-- Quiz Start Page -->
     <div class="container mt-3" id="startPage">
         <div class="row">
-            <div class="col-10 col-lg-8 text-center">
+            <div class="col-12 text-center">
                 <h1>JavaScript Coding Quiz!</h1><br>
                     <b><i>Instructions:</i></b> <br>
                     You start with 100 seconds.<br>
@@ -31,7 +31,7 @@
     <!-- Quiz questions appear after clicking START QUIZ button. -->
     <div class="container mt-3 d-none" id="quiz">
         <div class="row">
-            <div class="col-10 col-lg-8" id="QA-block">
+            <div class="col-12" id="QA-block">
                 <h3 id="questions" class="mb-4">QUESTION</h3>
                 <ul id="answers" class="list-unstyled">
                     <li class="answerChoice">A) </li>
@@ -39,7 +39,7 @@
                     <li class="answerChoice">C) </li>
                     <li class="answerChoice">D) </li>
                 </ul>
-                <p class="feedback"></p>
+                <p class="answerFeedback"></p>
             </div>
         </div>
     </div>
@@ -47,13 +47,13 @@
     <!-- Final Score Screen -->
     <div class="container mt-3 d-none" id="submitHighScore">
         <div class="row">
-            <div class="col-10 col-lg-8">
+            <div class="col-12">
                 <h2>Finished!</h2>
                 <p id="finalScore"> </p>
                 <form class="form-group">
                     <label for="new-score">Enter your name: </label>
                     <input type="text" id="playerName">
-                    <button type="button" class="btn btn-info btn-sm submitButton">Submit Score</button>
+                    <button type="button" class="btn btn-danger btn-sm submitButton">Submit Score</button>
                 </form>
             </div>
         </div>
@@ -61,6 +61,7 @@
 
     
     <script src="./script.js"></script>
+    <script src="./questions.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

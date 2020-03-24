@@ -1,35 +1,73 @@
 // declare all variables
-const questions = require("./questions")
-
-var startButton = document.querySelector("#startButton");
-var timeDiv = document.querySelector("#timeDiv");
-var countDown = 100;
 
 // references questions.js file
+const questions = require("./questions")
 
+var startButton = document.getElementById("startButton");
+var submitButton = document.querySelector("button.submitButton")
+var secsRemaining = 100;
+var timer = document.getElementById("timer");
+var submitScoreElement = document.querySelector("#submitHighScore");
+var finalScore = document.getElementById("finalScore");
+var playerName;
+var questionHead = document.getElementById("questions");
+var answerChoices = document.getElementById("answers");
 
-
+var questionNumber = -1;
+var answer;
 
 
 // declare all functions
 
-function timerStart() {
-    var timerInterval = setInterval(function() {
-        countDown--; 
-        if(countDown === 0) { // || no more questions to ask
-          clearInterval(timerInterval); // clearInterval tells it when to stop
-        } // come back here to add game ending conditions
-    
-      }, 1000); // 1000 is milliseconds by default
+function quizStart() {
+    questionNumber++;
+    answer = questions[questionNumber].answer
+
+    questionHead.textContent = questions[questionNumber].title;
+    answerChoices.innerHTML = "";
+
+    var choices = questions[questionNumber].choices;
+
+    for (var q = 0; q < choices.length; q++) {
+        var nextChoice = document.createElement("button");
+
+        nextChoice.textContent = choices[q]
+        answerBtn = answerChoices.appendChild(nextChoice).setAttribute("class", "p-3 m-1 btn btn-light btn-block");
+    }
 }
 
-    // timer interval
-    // if statement for game ending condition and then clear interval
+function timerSet() {
+
+    var countdown = setInterval(function () {
+        secsRemaining--;
+        timer.textContent = "Time: " + secsRemaining;
+
+        if (secsRemaining === 0 || questionNumber === questions.length) {
+            clearInterval(countdown);
+            setTimeout(displayScore, 500);
+        }
+    }, 1000);
+}
+
+function timerStart() {
+ 
+    // class of d-none toggles display of startPage and quiz
+    document.getElementById("startPage").classList.add('d-none');
+    document.getElementById("quiz").classList.remove('d-none');
+
+    // timer begins 100 second countdown
+    timerSet();
+
+    // starts the quiz
+    quizStart();
+}
+
 function timerSet()
 function quizStart() {
     timeDiv.style.display = "inline";
     timerStart();
 }
+
 function answerFeedback()
 
 

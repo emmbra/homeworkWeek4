@@ -62,21 +62,26 @@ function timerStart() {
     quizStart();
 }
 
-function timerSet()
-function quizStart() {
-    timeDiv.style.display = "inline";
-    timerStart();
-}
-
-function answerFeedback()
-
-
 // Start Button - set onclick function
 
-startButton.addEventListener("click", quizStart)
+startButton.addEventListener("click", startTimer);
 
 // Submit High Score Button - set onclick function
 
+submitButton.addEventListener("click", function (event) {
+    event.stopPropagation();
+    addScore();
+    
+    window.location.href = './highscores.html'
+});
+
+function addScore () {
+    playerName = document.getElementById("playerName").value;
+
+
+
+
+    
 // Retrieve high scores from local storage
 
 // Save high scores to local storage

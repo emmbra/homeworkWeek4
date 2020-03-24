@@ -23,7 +23,6 @@ var questionNumber = -1;
 // declare all functions
 ///////////////////////
 
-
 // toggles display of home/quiz containers, starts countdown, and displays quiz
 function startTimer() {
   document.getElementById("startPage").classList.add("d-none");
@@ -54,7 +53,9 @@ function quizQuestions() {
   for (var i = 0; i < choices.length; i++) {
     var nextChoice = document.createElement("button");
     nextChoice.textContent = choices[i];
-    answerButton = answerChoices.appendChild(nextChoice).setAttribute("class", "p-5 m-1 btn btn-secondary btn-block");
+    answerButton = answerChoices
+      .appendChild(nextChoice)
+      .setAttribute("class", "p-5 m-1 btn btn-secondary btn-block");
   }
 }
 
@@ -98,12 +99,12 @@ startButton.addEventListener("click", startTimer);
 
 // submit score button on click event listener
 submitButton.addEventListener("click", function(event) {
-  event.stopPropagation();
+  event.preventDefault();
   addScore();
   window.location.href = "./highscores.html";
 });
 
-// scoring for answer choices
+// scoring for answer choices on click event listener
 answerChoices.addEventListener("click", function(event) {
   var feedback = document.getElementsByClassName("answerFeedback")[0];
   if (answer === event.target.textContent) {

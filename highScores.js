@@ -1,3 +1,5 @@
+// establish variables
+
 var restartQuizButton = document.querySelector("button.restartQuizButton");
 var clearScoresButton = document.querySelector("button.clearScoresButton");
 var highScores = JSON.parse(localStorage.getItem("highScores") || "[]");

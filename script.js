@@ -4,13 +4,13 @@
 // const questions = require("./questions")
 
 var startButton = document.getElementById("startButton");
-var submitButton = document.querySelector("button.submitButton");
-var secsRemaining = 100;
+var submitButton = document.querySelector(".submitButton");
 var timer = document.getElementById("timer");
 var submitHighScore = document.querySelector("#submitHighScore");
 var finalScore = document.getElementById("finalScore");
 var questionContainer = document.getElementById("questions");
 var answerChoices = document.getElementById("answers");
+var secsRemaining = 100;
 var playerName;
 var answer;
 
@@ -20,21 +20,20 @@ var questionNumber = -1;
 
 // declare all functions
 
+
+// toggles display of home/quiz containers, starts countdown, and displays quiz
 function startTimer() {
-  // toggle display-none for startPage and quiz containers
   document.getElementById("startPage").classList.add("d-none");
   document.getElementById("quiz").classList.remove("d-none");
-  // timer set and begins 100 second countdown
   setTimer();
-  // create questions to display
   quizQuestions();
 }
 
+// timer countdown starting at 100 secs
 function setTimer() {
   var countdown = setInterval(function() {
     secsRemaining--;
     timer.textContent = "Time: " + secsRemaining;
-
     if (secsRemaining === 0 || questionNumber === questions.length) {
       clearInterval(countdown);
       setTimeout(displayScore, 500);
@@ -42,6 +41,7 @@ function setTimer() {
   }, 1000);
 }
 
+// displays quiz questions
 function quizQuestions() {
   questionNumber++;
   answer = questions[questionNumber].answer;
@@ -61,46 +61,43 @@ function quizQuestions() {
   }
 }
 
-// display option to enter name to high scores
+// toggle display of final score screen and show final score
 function displayScore() {
   document.getElementById("quiz").classList.add("d-none");
   document.getElementById("submitHighScore").classList.remove("d-none");
   finalScore.textContent = "FINAL SCORE: " + secsRemaining + ".";
 }
 
-// Event Listeners for Main Buttons
+// start quiz button on click event listener
 startButton.addEventListener("click", startTimer);
+
+// submit score button on click event listener
 submitButton.addEventListener("click", function(event) {
   event.stopPropagation();
   addScore();
-
   window.location.href = "./highscores.html";
 });
 
+// save scores to local storage
 function addScore() {
   playerName = document.getElementById("playerName").value;
-  // create a new object with name and score keys
   var newScore = {
     name: playerName,
     score: secsRemaining
   };
-  // check if there are scores in local storage first and take value
-  //if not, make a blank array
   var highScores = JSON.parse(localStorage.getItem("highScores") || "[]");
-  // push object into score array
   highScores.push(newScore);
-  // turn objects into an array of strings + put it into local storage
   localStorage.setItem("highScores", JSON.stringify(highScores));
 }
 
 function hideFeedback() {
-  var pElement = document.getElementsByClassName("answerFeedback")[0];
-  pElement.style.display = "none";
+  var feedback = document.getElementsByClassName("answerFeedback")[0];
+  feedback.style.display = "none";
 }
 
 function showFeedback() {
-  var pElement = document.getElementsByClassName("answerFeedback")[0];
-  pElement.removeAttribute("style");
+  var feedback = document.getElementsByClassName("answerFeedback")[0];
+  feedback.removeAttribute("style");
 }
 
 answerChoices.addEventListener("click", function(event) {

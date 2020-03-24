@@ -8,11 +8,12 @@ highScores.sort(function (a, b) {
     return b.score - a.score
 })
 
+// try to retrieve high scores from local storage or a blank array
 // display the high scores in ordered list format
 for (var i = 0; i < highScores.length; i++) {
-    var newLi = document.createElement("li");
-    newLi.textContent = highScores[i].name + ": " + highScores[i].score + " points";
-    highScoreList.appendChild(newLi);
+    var newScore = document.createElement("li");
+    newScore.textContent = highScores[i].name + ": " + highScores[i].score + " points";
+    highScoreList.appendChild(newScore);
 }
 
 // click even listeners for restart quiz 

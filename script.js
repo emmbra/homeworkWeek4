@@ -108,13 +108,11 @@ submitButton.addEventListener("click", function(event) {
 answerChoices.addEventListener("click", function(event) {
   var feedback = document.getElementsByClassName("answerFeedback")[0];
   if (answer === event.target.textContent) {
-    feedback.innerHTML = "Correct! +20 seconds.";
-    setTimeout(hideFeedback, 1000);
+    feedback.textContent = "Correct! +20 seconds.";
     secsRemaining = secsRemaining + 20;
     showFeedback();
   } else {
-    feedback.innerHTML = "Incorrect! -20 seconds.";
-    setTimeout(hideFeedback, 1000);
+    feedback.textContent = "Incorrect! -20 seconds.";
     secsRemaining = secsRemaining - 20;
     showFeedback();
   }

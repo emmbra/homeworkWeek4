@@ -1,4 +1,6 @@
+////////////////////////
 // declare all variables
+////////////////////////
 
 // references questions.js file
 // const questions = require("./questions")
@@ -17,8 +19,9 @@ var answer;
 // set this to -1 because arrays start at index 0
 var questionNumber = -1;
 
-
+////////////////////////
 // declare all functions
+///////////////////////
 
 
 // toggles display of home/quiz containers, starts countdown, and displays quiz
@@ -45,19 +48,13 @@ function setTimer() {
 function quizQuestions() {
   questionNumber++;
   answer = questions[questionNumber].answer;
-
   questionContainer.textContent = questions[questionNumber].title;
   answerChoices.innerHTML = "";
-
   var choices = questions[questionNumber].choices;
-
   for (var i = 0; i < choices.length; i++) {
     var nextChoice = document.createElement("button");
-
     nextChoice.textContent = choices[i];
-    answerBtn = answerChoices
-      .appendChild(nextChoice)
-      .setAttribute("class", "p-5 m-1 btn btn-secondary btn-block");
+    answerButton = answerChoices.appendChild(nextChoice).setAttribute("class", "p-5 m-1 btn btn-secondary btn-block");
   }
 }
 
@@ -67,16 +64,6 @@ function displayScore() {
   document.getElementById("submitHighScore").classList.remove("d-none");
   finalScore.textContent = "FINAL SCORE: " + secsRemaining + ".";
 }
-
-// start quiz button on click event listener
-startButton.addEventListener("click", startTimer);
-
-// submit score button on click event listener
-submitButton.addEventListener("click", function(event) {
-  event.stopPropagation();
-  addScore();
-  window.location.href = "./highscores.html";
-});
 
 // save scores to local storage
 function addScore() {
@@ -90,24 +77,42 @@ function addScore() {
   localStorage.setItem("highScores", JSON.stringify(highScores));
 }
 
+// hide answer feedback
 function hideFeedback() {
   var feedback = document.getElementsByClassName("answerFeedback")[0];
   feedback.style.display = "none";
 }
 
+// display answer feedback
 function showFeedback() {
   var feedback = document.getElementsByClassName("answerFeedback")[0];
   feedback.removeAttribute("style");
 }
 
+//////////////////////////////
+// declare all event listeners
+//////////////////////////////
+
+// start quiz button on click event listener
+startButton.addEventListener("click", startTimer);
+
+// submit score button on click event listener
+submitButton.addEventListener("click", function(event) {
+  event.stopPropagation();
+  addScore();
+  window.location.href = "./highscores.html";
+});
+
+// scoring
 answerChoices.addEventListener("click", function(event) {
-  var pElement = document.getElementsByClassName("answerFeedback")[0];
+  var feedback = document.getElementsByClassName("answerFeedback")[0];
   if (answer === event.target.textContent) {
-    pElement.innerHTML = "Correct!";
+    feedback.innerHTML = "Correct! +20 seconds.";
     setTimeout(hideFeedback, 1225);
+    secsRemaining = secsRemaining + 20;
     showFeedback();
   } else {
-    pElement.innerHTML = "Incorrect!";
+    feedback.innerHTML = "Incorrect! -20 seconds.";
     setTimeout(hideFeedback, 1225);
     secsRemaining = secsRemaining - 20;
     showFeedback();

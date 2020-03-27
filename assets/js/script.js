@@ -106,7 +106,6 @@ submitButton.addEventListener("click", function(event) {
   event.preventDefault();
   addScore();
   window.location.href = "./highscores.html";
-  return false;
 });
 
 // scoring for answer choices on click event listener

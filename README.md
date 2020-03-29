@@ -31,16 +31,20 @@ Difficulties included:
 * Working with a countdown timer.
 
 ## Screenshots
-Start Page
+### Start Page
+
 ![Screenshot of Start Page](https://github.com/emmbra/homeworkWeek4/blob/master/assets/images/screenshot01-start-page.png)
 
-Quiz Page
+### Quiz Page
+
 ![Screenshot of Quiz Page](https://github.com/emmbra/homeworkWeek4/blob/master/assets/images/screenshot02-quiz.png)
 
-Submit High Scores
+### Submit High Scores
+
 ![Screenshot of Submit Highscore Page](https://github.com/emmbra/homeworkWeek4/blob/master/assets/images/screenshot03-submit-high%20score.png)
 
-High Scores & Local Storage
+### High Scores & Local Storage
+
 ![Screenshot of High Scores & Local Storage](https://github.com/emmbra/homeworkWeek4/blob/master/assets/images/screenshot04-highscore-local-storage.png)
 
 ## Credits

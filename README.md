@@ -30,10 +30,17 @@ Difficulties included:
 * Saving and retrieving information from local storage.
 * Working with a countdown timer.
 
-## Screenshot
+## Screenshots
+Start Page
 ![Screenshot of Start Page](https://github.com/emmbra/homeworkWeek4/blob/master/assets/images/screenshot01-start-page.png)
+
+Quiz Page
 ![Screenshot of Quiz Page](https://github.com/emmbra/homeworkWeek4/blob/master/assets/images/screenshot02-quiz.png)
+
+Submit High Scores
 ![Screenshot of Submit Highscore Page](https://github.com/emmbra/homeworkWeek4/blob/master/assets/images/screenshot03-submit-high%20score.png)
+
+High Scores & Local Storage
 ![Screenshot of High Scores & Local Storage](https://github.com/emmbra/homeworkWeek4/blob/master/assets/images/screenshot04-highscore-local-storage.png)
 
 ## Credits

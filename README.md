@@ -31,7 +31,10 @@ Difficulties included:
 * Working with a countdown timer.
 
 ## Screenshot
-![Image of Password Generator](https://github.com/emmbra/homeworkWeek3/blob/master/Assets/Images/screenshot-passwordGenerator.png)
+![Screenshot of Start Page](https://github.com/emmbra/homeworkWeek4/blob/master/assets/images/screenshot01-start-page.png)
+![Screenshot of Quiz Page](https://github.com/emmbra/homeworkWeek4/blob/master/assets/images/screenshot02-quiz.png)
+![Screenshot of Submit Highscore Page](https://github.com/emmbra/homeworkWeek4/blob/master/assets/images/screenshot03-submit-high%20score.png)
+![Screenshot of High Scores & Local Storage](https://github.com/emmbra/homeworkWeek4/blob/master/assets/images/screenshot04-highscore-local-storage.png)
 
 ## Credits
 

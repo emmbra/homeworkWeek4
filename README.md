@@ -1,6 +1,6 @@
 # JavaScript Coding Quiz
 
-[JavaScript: Random Coding Quiz](https://emmbra.github.io/homeworkWeek4/)
+[JavaScript Coding Quiz](https://emmbra.github.io/homeworkWeek4/)
 
 ## Description
 Created a JavaScript Coding Quiz with the following features:

@@ -55,8 +55,8 @@ function quizQuestions() {
       var nextChoice = document.createElement("button");
       nextChoice.textContent = choices[i];
       answerButton = answerChoices
-        .appendChild(nextChoice)
-        .setAttribute("class", "p-5 m-1 btn btn-secondary btn-block");
+      .appendChild(nextChoice)
+      .setAttribute("class", "p-5 m-1 btn btn-secondary btn-block");
     }
   } else {
     return;
